@@ -61,9 +61,9 @@ function App() {
                     break;
                 }
                 case "F7": {
-                    setLaunchModeration(launchModeration => launchModeration = false);
-                    setDataLoaded(dataLoaded => false);
                     if (moderationResponse.value.length === postData.value.length) {
+                        setLaunchModeration(launchModeration => launchModeration = false);
+                        setDataLoaded(dataLoaded => false);
                         postData.value = await sendModerations();
                         moderationResponse.value = [];
                         if (postData.value[0] !== undefined) {
